@@ -13,37 +13,50 @@
         <div>Timer: </div>
     </header>
     <section>
-        <h2>Code Quiz Challege</h2>
-        <span id="instructions"></span>
-        <button>Start Quiz</button>
+        <h2 id="codeQuiz">Code Quiz Challege</h2>
+        <span id="instructions">You will have 75 seconds to complete the quiz. 
+            <p>Your final score is the time remaining at the moment of completion. </p>
+            <p>For each wrong answer, 15 seconds will be deducted from your final score.</p></span>
+        <br>
+            <button id="startButton">Start Quiz</button>
     </section>
     <section>
-        <h3 id="question1"></h3>
-            <h4 class="correct"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-        <h3 id="question2"></h3>
-            <h4 class="correct"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-        <h3 id="question3"></h3>
-            <h4 class="correct"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-        <h3 id="question4"></h3>
-            <h4 class="correct"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-        <h3 id="question5"></h3>
-            <h4 class="correct"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-            <h4 class="incorrect"></h4>
-        <div id="correct"></div>
+        <div id="question1" class="hide">
+        <h3>q1</h3>
+            <h4 value="correct">yes</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+        </div>
+        <div id="question2" class="hide">
+        <h3>q2</h3>
+            <h4 value="correct">yes</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+        </div>
+        <div id="question3" class="hide">
+        <h3>q3</h3>
+            <h4 value="correct">yes</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+        </div>
+        <div id="question4" class="hide">
+        <h3>q4</h3>
+            <h4 value="correct">yes</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+        </div>
+        <div id="question5" class="hide">
+        <h3>q5</h3>
+            <h4 value="correct">yes</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+            <h4 value="incorrect">no</h4>
+        </div>
+            <div id="correct"></div>
     </section>
 <script src="./assets/JS/script.js"></script>
 </body>
