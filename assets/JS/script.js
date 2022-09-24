@@ -43,26 +43,39 @@ function loadQuestion() {
         questions[currentQuestion - 1].classList.add("hide")
     }
     currentQuestion++
-
-}
-
-for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", function(e){
+}   
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function(e){
         if (e.target.getAttribute("value") === "correct"){
         messageDiv.textContent= "Correct!"
         } else{
         messageDiv.textContent= "Incorrect"
         }
-        
-        if (currentQuestion<questions.length){
-            loadQuestion()
-        }else{ lastQuestion = true
-        console.log("quiz over!")
-        }
+        wait()
+        console.log("wait function called")
     })
 }
 
 //on click of answer, show correct or incorrect for 1 second, then display next question and hide current qustion
+function wait() {
+    let waitTime = 1
+    let y = setInterval( function(){
+        waitTime--
+        if (waitTime === 0){
+            clearInterval(y)
+            console.log("wait timer stopped")
+            messageDiv.textContent=""
+            if (currentQuestion<questions.length){
+                loadQuestion() 
+                console.log("next question loaded " + currentQuestion)
+                }else{ lastQuestion = true
+                console.log("quiz over!")
+                }  
+        }
+    },1000)
+   console.log("wait is over")
+}
+
 //if incorrect, deduct 15 seconds from countdown
 
 
