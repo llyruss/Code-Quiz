@@ -1,4 +1,5 @@
 let startButton = document.getElementById("startButton");
+let submitButton= document.getElementById("submit")
 let codeQuiz = document.getElementById("codeQuiz");
 let instructions = document.getElementById("instructions");
 let question1 = document.getElementById("question1");
@@ -9,11 +10,15 @@ let question5 = document.getElementById("question5");
 let questions = [question1, question2, question3, question4, question5];
 let messageDiv = document.getElementById("correct")
 let timer = document.getElementById("timer")
+let score = document.getElementById("score")
+let finalScore
+let form = document.getElementById("form")
 let timeRemaining = 76
 let currentQuestion = 0;
 let options = document.querySelectorAll("h4");
 let lastQuestion = false
 console.log(options)
+
 
 //on start quiz hide Code Quiz Challenge and instuctions and start quiz button
 
@@ -32,6 +37,10 @@ let x = setInterval(function(){
     timer.textContent=timeRemaining
     if( timeRemaining === 0 || lastQuestion === true ){
         clearInterval(x)
+    finalScore= timer.textContent
+    console.log(finalScore)
+    score.textContent="Your final score is: " + finalScore
+
     }
 },1000)
 }
@@ -50,6 +59,8 @@ function loadQuestion() {
         messageDiv.textContent= "Correct!"
         } else{
         messageDiv.textContent= "Incorrect"
+        //if incorrect, deduct 15 seconds from countdown
+        timeRemaining -=15
         }
         wait()
         console.log("wait function called")
@@ -70,13 +81,17 @@ function wait() {
                 console.log("next question loaded " + currentQuestion)
                 }else{ lastQuestion = true
                 console.log("quiz over!")
-                }  
+                form.classList.remove("hide")
+                question5.classList.add("hide")
+                console.log(finalScore)
+            }  
+
         }
     },1000)
+
    console.log("wait is over")
 }
 
-//if incorrect, deduct 15 seconds from countdown
+//form submission stuff
 
 
-//after last question is answered show high score form
