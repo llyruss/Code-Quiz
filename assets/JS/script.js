@@ -39,10 +39,13 @@ let x = setInterval(function(){
     timer.textContent=timeRemaining
     if( timeRemaining === 0 || lastQuestion === true ){
         clearInterval(x)
+        for(let i=0; i<questions.length; i++){
+            questions[i].classList.add("hide")
+        }
+    form.classList.remove("hide")
     finalScore= timer.textContent
     console.log(finalScore)
     score.textContent="Your final score is: " + finalScore
-
     }
 },1000)
 }
@@ -80,7 +83,8 @@ function wait() {
         if (waitTime === 0){
             clearInterval(y)
             console.log("wait timer stopped")
-            messageDiv.textContent=""
+            messageDiv.textContent=""   
+            }
             if (currentQuestion<questions.length){
                 loadQuestion() 
                 console.log("next question loaded " + currentQuestion)
@@ -90,8 +94,6 @@ function wait() {
                 question5.classList.add("hide")
                 console.log(finalScore)
             }  
-
-        }
     },1000)
 
    console.log("wait is over")
@@ -117,7 +119,7 @@ finalScore = 0;
         userData = JSON.parse(localStorage.getItem("userData"));
 
         newEntryObj= {
-            "intials": initials,
+            "initials": initials,
             "finalScore": finalScore
         }
 
