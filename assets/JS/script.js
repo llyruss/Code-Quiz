@@ -11,8 +11,8 @@ let questions = [question1, question2, question3, question4, question5];
 let messageDiv = document.getElementById("correct")
 let timer = document.getElementById("timer")
 let score = document.getElementById("score")
-let finalScore
 let form = document.getElementById("form")
+let finalScore
 let timeRemaining = 76
 let currentQuestion = 0;
 let options = document.querySelectorAll("h4");
@@ -33,7 +33,9 @@ startButton.addEventListener("click", function () {
 //countdown clock decrements -1 every second, stop if last question is answered
 function startTimer(){
 let x = setInterval(function(){
+    if(timeRemaining>0){
     timeRemaining--
+    }
     timer.textContent=timeRemaining
     if( timeRemaining === 0 || lastQuestion === true ){
         clearInterval(x)
@@ -60,7 +62,10 @@ function loadQuestion() {
         } else{
         messageDiv.textContent= "Incorrect"
         //if incorrect, deduct 15 seconds from countdown
-        timeRemaining -=15
+            if(timeRemaining>=15){
+            timeRemaining -=15
+             }
+            else(timeRemaining=0)
         }
         wait()
         console.log("wait function called")
@@ -93,5 +98,52 @@ function wait() {
 }
 
 //form submission stuff
+// get score history from local storage
+// if score history is null (the first time this game has been played), create empty score history array and send it to local storage
+let initials = "";
+finalScore = 0;
+//get user data
+    if(localStorage.getItem("userData")=== null){
+        let userData = [];
+        localStorage.setItem("userData", JSON.stringify(userData));
+    }
+
+    submitButton.addEventListener("click", function(){
+        initials = document.getElementById("initials").value
+        if (initials === ""){
+            return
+        }
+
+        userData = JSON.parse(localStorage.getItem("userData"));
+
+        newEntryObj= {
+            "intials": initials,
+            "finalScore": finalScore
+        }
+
+        userData.push(newEntryObj);
+        
+        console.log(userData)
+
+        localStorage.setItem("userData", JSON.stringify(userData))
+    })
+
+
+
+
+
+// get score history from local storage
+// if score history is null (the first time this game has been played), create empty score history array and send it to local storage
+
+// on submit:
+//create new score object to hold new initals and score
+// get score history from local storage
+//add new score object to score history
+// score history back to local storage
+
+//on highscoare page
+//get score history from local storage
+// loop through score history and put each game details on the page
+
 
 
