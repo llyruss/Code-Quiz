@@ -1,0 +1,8 @@
+body {
+    text-align: center;
+};
+
+#button{
+    background-color: rgb(17, 111, 111);
+    color: white;
+}

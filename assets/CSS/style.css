@@ -2,3 +2,34 @@
 .hide {
     display: none;
 }
+
+body {
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+};
+
+section {
+    display: flex;
+}
+
+#startButton {
+    color: white;
+    background-color: rgb(17, 111, 111);
+}
+
+#startButton:hover{
+    background-color: rgb(25, 152, 152);
+}
+
+h4{
+    padding: 3px;
+    color:white;
+    background-color: rgb(17, 111, 111);
+}
+
+h4:hover{
+    background-color:rgb(25, 152, 152);
+}
