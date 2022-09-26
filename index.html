@@ -21,48 +21,58 @@
             <button id="startButton">Start Quiz</button>
     </section>
     <section>
-        <div id="question1" class="hide">
+        <div id="question1" class="hide" class="question">
         <h3>Javascript is used for which parts of web development?</h3>
-            <h4 value="incorrect">1) Front end development</h4> 
-            <h4 value="incorrect">2) Back end development</h4> 
-            <h4 value="incorrect">3) Formatting your site</h4> 
-            <h4 value="correct">4) All of the above</h4>
+            <div class="options">  
+                <h4 value="incorrect">1) Front end development</h4> 
+                <h4 value="incorrect">2) Back end development</h4> 
+                <h4 value="incorrect">3) Formatting your site</h4> 
+                <h4 value="correct">4) All of the above</h4>
+            </div>
         </div>
         <div id="question2" class="hide" class="question">
         <h3>How do you begin a for loop?</h3>
-            <h4 value="correct">1) for ( )</h4>
-            <h4 value="incorrect">2) for { }</h4>
-            <h4 value="incorrect">3) for [ ]</h4>
-            <h4 value="incorrect">4) for = </h4>
+             <div class="options">  
+                <h4 value="correct">1) for ( )</h4>
+                <h4 value="incorrect">2) for { }</h4>
+                <h4 value="incorrect">3) for [ ]</h4>
+                <h4 value="incorrect">4) for = </h4>
+            </div>
         </div>
         <div id="question3" class="hide" class="question">
         <h3>For which platform was Javascript developed?</h3>
-            <h4 value="incorrect">1) Internet Explorer</h4>
-            <h4 value="incorrect">2) Twitter</h4>
-            <h4 value="correct">3) Netscape 2</h4>
-            <h4 value="incorrect">4) Sublime</h4>
+            <div class="options">  
+                <h4 value="incorrect">1) Internet Explorer</h4>
+                <h4 value="incorrect">2) Twitter</h4>
+                <h4 value="correct">3) Netscape 2</h4>
+                <h4 value="incorrect">4) Sublime</h4>
+            </div>
         </div>
         <div id="question4" class="hide" class="question">
         <h3>Inside which HTML element do we put the Javascript?</h3>
-            <h4 value="incorrect">1) &ltjs&gt </h4>
-            <h4 value="incorrect">2) &ltjavascript&gt</h4>
-            <h4 value="correct">3) &ltscript&gt</h4>
-            <h4 value="incorrect">4) &ltscripting&gt</h4>
+            <div class="options">  
+                <h4 value="incorrect">1) &ltjs&gt </h4>
+                <h4 value="incorrect">2) &ltjavascript&gt</h4>
+                <h4 value="correct">3) &ltscript&gt</h4>
+                <h4 value="incorrect">4) &ltscripting&gt</h4>
+            </div>
         </div>
         <div id="question5" class="hide" class="question">
         <h3>Where do you link JavaScript?</h3>
-            <h4 value="correct">1) In the &ltbody&gt section</h4>
-            <h4 value="incorrect">2) In the &lthead&gt section</h4>
-            <h4 value="incorrect">3) In the &ltfooter&gt section</h4>
-            <h4 value="incorrect">4) In the &ltHTML&gt section</h4>
+            <div class="options">  
+                <h4 value="correct">1) In the &ltbody&gt section</h4>
+                <h4 value="incorrect">2) In the &lthead&gt section</h4>
+                <h4 value="incorrect">3) In the &ltfooter&gt section</h4>
+                <h4 value="incorrect">4) In the &ltHTML&gt section</h4>
+            </div>
         </div>
-            <div id="correct"></div>
+        <div id="correct"></div>
         <form id="form" class="hide">
             <h2>All Done!</h2>
             <span id="score"></span><br>
             <label for="initials">Enter Initials Here:</label>
             <input type="text" id="initials">
-            <a id="submit" href="./assets/highscore.html"><div>Submit</div></a>
+            <a id="submit" href="./assets/highscore.html"><div id="submitButton">SUBMIT</div></a>
         </form>
     </section>
 <script src="./assets/JS/script.js"></script>

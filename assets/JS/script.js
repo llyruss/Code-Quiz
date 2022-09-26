@@ -40,6 +40,7 @@ let x = setInterval(function(){
     if( timeRemaining === 0 || lastQuestion === true ){
         clearInterval(x)
         for(let i=0; i<questions.length; i++){
+            questions[i].classList.remove("question")
             questions[i].classList.add("hide")
         }
     form.classList.remove("hide")
@@ -53,7 +54,9 @@ let x = setInterval(function(){
 //on start quiz display question
 function loadQuestion() {
     questions[currentQuestion].classList.remove("hide")
+    questions[currentQuestion].classList.add("question")
     if (currentQuestion > 0) {
+        questions[currentQuestion-1].classList.remove("question")
         questions[currentQuestion - 1].classList.add("hide")
     }
     currentQuestion++
